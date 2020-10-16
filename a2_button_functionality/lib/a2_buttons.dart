@@ -18,6 +18,8 @@ class _MyButtonPageState extends State<MyButtonPage> {
           setState(() {
             _msgcounter = 0;
             _msgclick = 'Drink Me';
+            _msgreset = 'Need more beer';
+
             print('reset working, counter 0');
           });
         };
@@ -32,6 +34,7 @@ class _MyButtonPageState extends State<MyButtonPage> {
           setState(() {
             _msgcounter++;
             _msgclick = 'Beers Drank $_msgcounter';
+            _msgreset = 'Vomit';
           });
 
           print('click me working, counter up');
@@ -60,11 +63,13 @@ class _MyButtonPageState extends State<MyButtonPage> {
                       setState(() {
                         if (_enabled) {
                           print('_enabled is true');
-                          _msgreset = 'Vomit';
+
                           if (_msgcounter == 0) {
                             _msgclick = 'Drink Me';
+                            _msgreset = 'Need more beer';
                           } else {
                             _msgclick = 'Beers Dranks $_msgcounter';
+                            _msgreset = 'Vomit';
                           }
                         } else {
                           _msgreset = '';
